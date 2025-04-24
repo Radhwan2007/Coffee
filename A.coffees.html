@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Coffee types</title>
+      <link rel="icon" href="images/logo2.png" type="image/png">
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" href="css/Loader.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+       <!-- Font Awesome for icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   </head>
+   <body>
+      <div class="loader-container" id="loader">
+         <div class="coffee-cup">
+             <div class="coffee"></div>
+         </div>
+         <div class="loader-text">Brewing your experience...</div>
+     </div>
+      <div class="header_section header_bg">
+         <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand"href="A.index.html"><img src="images/logo2.png" style="height: 40px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="A.Home.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="A.about.html">About</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="A.coffees.html">Coffees</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="A.shop.html">Shop</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="A.blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="A.contact.html">Contact</a>
+                     </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                     <div class="login_bt">
+                        <ul>
+                            <li><a href="A.Home.html"><span class="user_icon"><i class="fa fa-user" aria-hidden="true"></i></span></a></li>
+                            <li><a href="A.Home.html"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                        </ul>
+                     </div>
+                  </form>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+    
+      <!-- The other two identical sections would follow with the same text changes -->
+      <!-- coffee section end -->
+          <style>
+              /* Global Styles */
+              * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              }
+              
+              body {
+                  background-color: #f5f5f5;
+                  color: #333;
+                  line-height: 1.6;
+              }
+              
+              .container {
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 20px;
+              }
+              
+              .section-title {
+                  text-align: center;
+                  margin: 30px 0;
+                  color: #6F4E37;
+                  font-size: 2.5rem;
+                  position: relative;
+              }
+              
+              .section-title:after {
+                  content: "";
+                  display: block;
+                  width: 100px;
+                  height: 4px;
+                  background: #6F4E37;
+                  margin: 15px auto;
+                  border-radius: 2px;
+              }
+              
+              .section-description {
+                  text-align: center;
+                  max-width: 800px;
+                  margin: 0 auto 40px;
+                  color: #666;
+                  font-size: 1.1rem;
+              }
+              
+              /* Blends Grid */
+              .blends-grid {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                  gap: 40px;
+                  margin-top: 40px;
+              }
+              
+              .blend-card {
+                  background: white;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.3s ease, box-shadow 0.3s ease;
+                  display: flex;
+                  flex-direction: column;
+              }
+              
+              .blend-card:hover {
+                  transform: translateY(-10px);
+                  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+              }
+              
+              .blend-img-container {
+                  position: relative;
+                  height: 250px;
+                  overflow: hidden;
+              }
+              
+              .blend-img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  transition: transform 0.5s ease;
+              }
+              
+              .blend-card:hover .blend-img {
+                  transform: scale(1.1);
+              }
+              
+              .origin-flag {
+                  position: absolute;
+                  top: 15px;
+                  right: 15px;
+                  width: 40px;
+                  height: 25px;
+                  border-radius: 3px;
+                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+              }
+              
+              .blend-info {
+                  padding: 25px;
+                  flex-grow: 1;
+                  display: flex;
+                  flex-direction: column;
+              }
+              
+              .blend-name {
+                  font-size: 1.6rem;
+                  color: #6F4E37;
+                  margin-bottom: 10px;
+              }
+              
+              .blend-origin {
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 15px;
+                  font-size: 0.9rem;
+                  color: #888;
+              }
+              
+              .blend-origin i {
+                  margin-right: 5px;
+              }
+              
+              .blend-desc {
+                  color: #666;
+                  margin-bottom: 20px;
+                  font-size: 0.95rem;
+                  flex-grow: 1;
+              }
+              
+              .blend-details {
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 20px;
+                  flex-wrap: wrap;
+                  gap: 10px;
+              }
+              
+              .detail-item {
+                  display: flex;
+                  align-items: center;
+                  font-size: 0.9rem;
+              }
+              
+              .detail-item i {
+                  color: #6F4E37;
+                  margin-right: 5px;
+                  font-size: 1.1rem;
+              }
+              
+              .roast-level {
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 15px;
+              }
+              
+              .roast-label {
+                  margin-right: 10px;
+                  font-size: 0.9rem;
+                  color: #666;
+              }
+              
+              .roast-indicator {
+                  display: flex;
+              }
+              
+              .roast-dot {
+                  width: 12px;
+                  height: 12px;
+                  border-radius: 50%;
+                  margin-right: 5px;
+                  background: #ddd;
+              }
+              
+              .roast-dot.active {
+                  background: #6F4E37;
+              }
+              
+              .price-section {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-top: 15px;
+                  border-top: 1px solid #eee;
+                  padding-top: 15px;
+              }
+              
+              .blend-price {
+                  font-weight: bold;
+                  font-size: 1.3rem;
+                  color: #6F4E37;
+              }
+              
+              .size-options {
+                  display: flex;
+                  gap: 8px;
+              }
+              
+              .size-option {
+                  padding: 5px 10px;
+                  border: 1px solid #ddd;
+                  border-radius: 15px;
+                  font-size: 0.8rem;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+              }
+              
+              .size-option:hover, .size-option.active {
+                  background: #6F4E37;
+                  color: white;
+                  border-color: #6F4E37;
+              }
+              
+              .add-to-cart {
+                  width: 100%;
+                  padding: 12px;
+                  background: #6F4E37;
+                  color: white;
+                  border: none;
+                  border-radius: 5px;
+                  font-size: 1rem;
+                  cursor: pointer;
+                  transition: background 0.3s ease;
+                  margin-top: 10px;
+              }
+              
+              .add-to-cart:hover {
+                  background: #5a3c29;
+              }
+              
+              /* Tasting Notes */
+              .tasting-notes {
+                  margin-top: 20px;
+              }
+              
+              .notes-title {
+                  font-size: 0.9rem;
+                  color: #666;
+                  margin-bottom: 8px;
+                  display: flex;
+                  align-items: center;
+              }
+              
+              .notes-title i {
+                  margin-right: 5px;
+              }
+              
+              .notes-tags {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 8px;
+              }
+              
+              .note-tag {
+                  background: #f0e6dd;
+                  color: #6F4E37;
+                  padding: 4px 10px;
+                  border-radius: 15px;
+                  font-size: 0.8rem;
+              }
+              
+              /* Responsive Design */
+              @media (max-width: 768px) {
+                  .blends-grid {
+                      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                  }
+                  
+                  .blend-img-container {
+                      height: 200px;
+                  }
+              }
+          </style>
+
+      <body>
+          <div class="container">
+              <h1 class="section-title">Our Specialty Coffee Blends</h1>
+              <p class="section-description">
+                  Discover our exclusive coffee blends, carefully crafted from the finest beans around the world. 
+                  Each blend offers a unique flavor profile that tells the story of its origin.
+              </p>
+              
+              <div class="blends-grid">
+                  <!-- Blend 1 -->
+                  <div class="blend-card">
+                      <div class="blend-img-container">
+                          <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Morning Sun Blend" class="blend-img">
+                          <img src="https://flagcdn.com/w20/br.png" alt="Brazil" class="origin-flag">
+                      </div>
+                      <div class="blend-info">
+                          <h3 class="blend-name">Morning Sun Blend</h3>
+                          <div class="blend-origin">
+                              <i class="fas fa-globe-americas"></i>
+                              Origin: Brazil, Colombia, Guatemala
+                          </div>
+                          <p class="blend-desc">
+                              A bright and lively blend to start your day. Features citrusy notes with a smooth chocolate 
+                              finish. Perfect as your morning cup.
+                          </p>
+                          
+                          <div class="blend-details">
+                              <div class="detail-item">
+                                  <i class="fas fa-mountain"></i>
+                                  Altitude: 1200-1800m
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-seedling"></i>
+                                  Process: Washed
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-calendar-alt"></i>
+                                  Harvest: Oct-Jan
+                              </div>
+                          </div>
+                          
+                          <div class="roast-level">
+                              <span class="roast-label">Roast:</span>
+                              <div class="roast-indicator">
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot"></div>
+                                  <div class="roast-dot"></div>
+                                  <div class="roast-dot"></div>
+                              </div>
+                              <span style="margin-left: 10px; font-size: 0.8rem; color: #666;">Medium</span>
+                          </div>
+                          
+                          <div class="tasting-notes">
+                              <div class="notes-title">
+                                  <i class="fas fa-wine-glass-alt"></i>
+                                  Tasting Notes:
+                              </div>
+                              <div class="notes-tags">
+                                  <span class="note-tag">Citrus</span>
+                                  <span class="note-tag">Chocolate</span>
+                                  <span class="note-tag">Caramel</span>
+                                  <span class="note-tag">Bright</span>
+                              </div>
+                          </div>
+                          
+                          <div class="price-section">
+                              <span class="blend-price">$14.99 / 12oz</span>
+                              <div class="size-options">
+                                  <span class="size-option">12oz</span>
+                                  <span class="size-option">1lb</span>
+                                  <span class="size-option">5lb</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Blend 2 -->
+                  <div class="blend-card">
+                      <div class="blend-img-container">
+                          <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Evening Reserve" class="blend-img">
+                          <img src="https://flagcdn.com/w20/et.png" alt="Ethiopia" class="origin-flag">
+                      </div>
+                      <div class="blend-info">
+                          <h3 class="blend-name">Evening Reserve</h3>
+                          <div class="blend-origin">
+                              <i class="fas fa-globe-africa"></i>
+                              Origin: Ethiopia, Kenya, Sumatra
+                          </div>
+                          <p class="blend-desc">
+                              A rich, full-bodied blend for the evening hours. Features deep berry notes with 
+                              a wine-like complexity and earthy undertones.
+                          </p>
+                          
+                          <div class="blend-details">
+                              <div class="detail-item">
+                                  <i class="fas fa-mountain"></i>
+                                  Altitude: 1500-2200m
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-seedling"></i>
+                                  Process: Natural
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-calendar-alt"></i>
+                                  Harvest: Nov-Feb
+                              </div>
+                          </div>
+                          
+                          <div class="roast-level">
+                              <span class="roast-label">Roast:</span>
+                              <div class="roast-indicator">
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot"></div>
+                                  <div class="roast-dot"></div>
+                              </div>
+                              <span style="margin-left: 10px; font-size: 0.8rem; color: #666;">Medium-Dark</span>
+                          </div>
+                          
+                          <div class="tasting-notes">
+                              <div class="notes-title">
+                                  <i class="fas fa-wine-glass-alt"></i>
+                                  Tasting Notes:
+                              </div>
+                              <div class="notes-tags">
+                                  <span class="note-tag">Berry</span>
+                                  <span class="note-tag">Wine</span>
+                                  <span class="note-tag">Earthy</span>
+                                  <span class="note-tag">Spice</span>
+                              </div>
+                          </div>
+                          
+                          <div class="price-section">
+                              <span class="blend-price">$16.99 / 12oz</span>
+                              <div class="size-options">
+                                  <span class="size-option">12oz</span>
+                                  <span class="size-option">1lb</span>
+                                  <span class="size-option">5lb</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Blend 3 -->
+                  <div class="blend-card">
+                      <div class="blend-img-container">
+                          <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Highland Mist" class="blend-img">
+                          <img src="https://flagcdn.com/w20/co.png" alt="Colombia" class="origin-flag">
+                      </div>
+                      <div class="blend-info">
+                          <h3 class="blend-name">Highland Mist</h3>
+                          <div class="blend-origin">
+                              <i class="fas fa-mountain"></i>
+                              Origin: Colombia, Costa Rica, Peru
+                          </div>
+                          <p class="blend-desc">
+                              A smooth and balanced blend with floral aromas and nutty undertones. Grown in 
+                              high-altitude farms with sustainable practices.
+                          </p>
+                          
+                          <div class="blend-details">
+                              <div class="detail-item">
+                                  <i class="fas fa-mountain"></i>
+                                  Altitude: 1600-2000m
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-seedling"></i>
+                                  Process: Honey
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-calendar-alt"></i>
+                                  Harvest: Year-round
+                              </div>
+                          </div>
+                          
+                          <div class="roast-level">
+                              <span class="roast-label">Roast:</span>
+                              <div class="roast-indicator">
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot"></div>
+                                  <div class="roast-dot"></div>
+                                  <div class="roast-dot"></div>
+                              </div>
+                              <span style="margin-left: 10px; font-size: 0.8rem; color: #666;">Medium</span>
+                          </div>
+                          
+                          <div class="tasting-notes">
+                              <div class="notes-title">
+                                  <i class="fas fa-wine-glass-alt"></i>
+                                  Tasting Notes:
+                              </div>
+                              <div class="notes-tags">
+                                  <span class="note-tag">Floral</span>
+                                  <span class="note-tag">Nutty</span>
+                                  <span class="note-tag">Caramel</span>
+                                  <span class="note-tag">Balanced</span>
+                              </div>
+                          </div>
+                          
+                          <div class="price-section">
+                              <span class="blend-price">$15.50 / 12oz</span>
+                              <div class="size-options">
+                                  <span class="size-option">12oz</span>
+                                  <span class="size-option">1lb</span>
+                                  <span class="size-option">5lb</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Blend 4 -->
+                  <div class="blend-card">
+                      <div class="blend-img-container">
+                          <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Dark Midnight" class="blend-img">
+                          <img src="https://flagcdn.com/w20/id.png" alt="Indonesia" class="origin-flag">
+                      </div>
+                      <div class="blend-info">
+                          <h3 class="blend-name">Dark Midnight</h3>
+                          <div class="blend-origin">
+                              <i class="fas fa-globe-asia"></i>
+                              Origin: Indonesia, Vietnam, India
+                          </div>
+                          <p class="blend-desc">
+                              Our darkest roast with intense smoky flavors and low acidity. Perfect for 
+                              those who prefer a bold, robust cup with a lingering finish.
+                          </p>
+                          
+                          <div class="blend-details">
+                              <div class="detail-item">
+                                  <i class="fas fa-mountain"></i>
+                                  Altitude: 800-1500m
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-seedling"></i>
+                                  Process: Wet-Hulled
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-calendar-alt"></i>
+                                  Harvest: May-Oct
+                              </div>
+                          </div>
+                          
+                          <div class="roast-level">
+                              <span class="roast-label">Roast:</span>
+                              <div class="roast-indicator">
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot active"></div>
+                              </div>
+                              <span style="margin-left: 10px; font-size: 0.8rem; color: #666;">Dark</span>
+                          </div>
+                          
+                          <div class="tasting-notes">
+                              <div class="notes-title">
+                                  <i class="fas fa-wine-glass-alt"></i>
+                                  Tasting Notes:
+                              </div>
+                              <div class="notes-tags">
+                                  <span class="note-tag">Smoky</span>
+                                  <span class="note-tag">Dark Chocolate</span>
+                                  <span class="note-tag">Molasses</span>
+                                  <span class="note-tag">Bold</span>
+                              </div>
+                          </div>
+                          
+                          <div class="price-section">
+                              <span class="blend-price">$13.99 / 12oz</span>
+                              <div class="size-options">
+                                  <span class="size-option">12oz</span>
+                                  <span class="size-option">1lb</span>
+                                  <span class="size-option">5lb</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Blend 5 -->
+                  <div class="blend-card">
+                      <div class="blend-img-container">
+                          <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Tropical Sunrise" class="blend-img">
+                          <img src="https://flagcdn.com/w20/ke.png" alt="Kenya" class="origin-flag">
+                      </div>
+                      <div class="blend-info">
+                          <h3 class="blend-name">Tropical Sunrise</h3>
+                          <div class="blend-origin">
+                              <i class="fas fa-umbrella-beach"></i>
+                              Origin: Kenya, Tanzania, Rwanda
+                          </div>
+                          <p class="blend-desc">
+                              A vibrant African blend with fruity acidity and sweet floral notes. 
+                              Bright and complex, this coffee will awaken your senses.
+                          </p>
+                          
+                          <div class="blend-details">
+                              <div class="detail-item">
+                                  <i class="fas fa-mountain"></i>
+                                  Altitude: 1700-2300m
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-seedling"></i>
+                                  Process: Washed
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-calendar-alt"></i>
+                                  Harvest: Oct-Dec
+                              </div>
+                          </div>
+                          
+                          <div class="roast-level">
+                              <span class="roast-label">Roast:</span>
+                              <div class="roast-indicator">
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot"></div>
+                                  <div class="roast-dot"></div>
+                                  <div class="roast-dot"></div>
+                                  <div class="roast-dot"></div>
+                              </div>
+                              <span style="margin-left: 10px; font-size: 0.8rem; color: #666;">Light</span>
+                          </div>
+                          
+                          <div class="tasting-notes">
+                              <div class="notes-title">
+                                  <i class="fas fa-wine-glass-alt"></i>
+                                  Tasting Notes:
+                              </div>
+                              <div class="notes-tags">
+                                  <span class="note-tag">Tropical Fruit</span>
+                                  <span class="note-tag">Floral</span>
+                                  <span class="note-tag">Citrus</span>
+                                  <span class="note-tag">Bright</span>
+                              </div>
+                          </div>
+                          
+                          <div class="price-section">
+                              <span class="blend-price">$17.50 / 12oz</span>
+                              <div class="size-options">
+                                  <span class="size-option">12oz</span>
+                                  <span class="size-option">1lb</span>
+                                  <span class="size-option">5lb</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Blend 6 -->
+                  <div class="blend-card">
+                      <div class="blend-img-container">
+                          <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Decaf Harmony" class="blend-img">
+                          <img src="https://flagcdn.com/w20/cr.png" alt="Costa Rica" class="origin-flag">
+                      </div>
+                      <div class="blend-info">
+                          <h3 class="blend-name">Decaf Harmony</h3>
+                          <div class="blend-origin">
+                              <i class="fas fa-leaf"></i>
+                              Origin: Costa Rica, Colombia, Mexico
+                          </div>
+                          <p class="blend-desc">
+                              Our premium decaf blend that doesn't compromise on flavor. Swiss Water Process 
+                              decaffeination preserves the coffee's natural characteristics.
+                          </p>
+                          
+                          <div class="blend-details">
+                              <div class="detail-item">
+                                  <i class="fas fa-mountain"></i>
+                                  Altitude: 1200-1800m
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-seedling"></i>
+                                  Process: Swiss Water
+                              </div>
+                              <div class="detail-item">
+                                  <i class="fas fa-calendar-alt"></i>
+                                  Harvest: Year-round
+                              </div>
+                          </div>
+                          
+                          <div class="roast-level">
+                              <span class="roast-label">Roast:</span>
+                              <div class="roast-indicator">
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot active"></div>
+                                  <div class="roast-dot"></div>
+                                  <div class="roast-dot"></div>
+                                  <div class="roast-dot"></div>
+                              </div>
+                              <span style="margin-left: 10px; font-size: 0.8rem; color: #666;">Medium</span>
+                          </div>
+                          
+                          <div class="tasting-notes">
+                              <div class="notes-title">
+                                  <i class="fas fa-wine-glass-alt"></i>
+                                  Tasting Notes:
+                              </div>
+                              <div class="notes-tags">
+                                  <span class="note-tag">Nutty</span>
+                                  <span class="note-tag">Caramel</span>
+                                  <span class="note-tag">Mild Citrus</span>
+                                  <span class="note-tag">Smooth</span>
+                              </div>
+                          </div>
+                          
+                          <div class="price-section">
+                              <span class="blend-price">$16.25 / 12oz</span>
+                              <div class="size-options">
+                                  <span class="size-option">12oz</span>
+                                  <span class="size-option">1lb</span>
+                                  <span class="size-option">5lb</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <script>
+              // Size selection functionality
+              document.querySelectorAll('.size-option').forEach(option => {
+                  option.addEventListener('click', function() {
+                      this.parentElement.querySelectorAll('.size-option').forEach(opt => {
+                          opt.classList.remove('active');
+                      });
+                      this.classList.add('active');
+                      
+                      // Update price based on size (this would be more complex in real implementation)
+                      const priceElement = this.closest('.price-section').querySelector('.blend-price');
+                      const basePrice = 14.99; // This would come from data attributes in real implementation
+                      
+                      if (this.textContent === '1lb') {
+                          priceElement.textContent = `$${(basePrice * 1.33).toFixed(2)} / 1lb`;
+                      } else if (this.textContent === '5lb') {
+                          priceElement.textContent = `$${(basePrice * 4.5).toFixed(2)} / 5lb`;
+                      } else {
+                          priceElement.textContent = `$${basePrice.toFixed(2)} / 12oz`;
+                      }
+                  });
+              });
+              
+              // Add to cart functionality
+              document.querySelectorAll('.add-to-cart').forEach(button => {
+                  button.addEventListener('click', function() {
+                      const blendCard = this.closest('.blend-card');
+                      const name = blendCard.querySelector('.blend-name').textContent;
+                      const size = blendCard.querySelector('.size-option.active').textContent;
+                      const price = blendCard.querySelector('.blend-price').textContent;
+                      
+                      alert(`Added ${name} (${size}) to cart!\nPrice: ${price}`);
+                      // In a real implementation, you would update the cart system here
+                  });
+              });
+          </script>
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-sm-12">
+                  <p class="copyright_text">2025 All Rights Reserved. Design by Harres Radhwane</a></p>
+               </div>
+               <div class="col-lg-6 col-sm-12">
+                  <div class="footer_social_icon">
+                     <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/LOADER.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>

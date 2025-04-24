@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Shop coffee</title>
+      <link rel="icon" href="images/logo2.png" type="image/png">
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!--lOADER CSS-->
+      <link rel="stylesheet" href="css/Loader.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Font Awesome for icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!--Video-->
+      <link rel="stylesheet" href="css/viDEO.css"/>
+      <!--Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   </head>
+
+      <div class="loader-container" id="loader">
+         <div class="coffee-cup">
+             <div class="coffee"></div>
+         </div>
+         <div class="loader-text">Brewing your experience...</div>
+     </div>
+      <div class="header_section">
+         <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="navbar-brand"href="index.html"><a href="#"><img src="images/logo2.png" style="height: 40px;"></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="Home.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="coffees.html">Coffees</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                     </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                     <div class="login_bt">
+                        <ul>
+                           <li><a href="login.html"><span class="user_icon"><i class="fa fa-user" aria-hidden="true"></i></span>Login</a></li>
+                           <li><a href="login.html"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                        </ul>
+                     </div>
+                  </form>
+               </div>
+            </nav>
+         </div>
+         <style>
+            /* Global Styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            
+            body {
+                background-color: #f5f5f5;
+                color: #333;
+                line-height: 1.6;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            
+            h1 {
+                text-align: center;
+                margin: 30px 0;
+                color: #6F4E37;
+                font-size: 2.5rem;
+            }
+            
+            /* Coffee Grid */
+            .coffee-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .coffee-card {
+                background: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .coffee-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            }
+            
+            .coffee-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+            
+            .coffee-info {
+                padding: 20px;
+            }
+            
+            .coffee-name {
+                font-size: 1.5rem;
+                color: #2c0902;
+                margin-bottom: 10px;
+            }
+            
+            .coffee-desc {
+                color: #666;
+                margin-bottom: 15px;
+                font-size: 0.9rem;
+            }
+            
+            .coffee-price {
+                font-weight: bold;
+                font-size: 1.2rem;
+                color: #2c0902;
+                margin-bottom: 15px;
+            }
+            
+            /* Customization Options */
+            .customization-options {
+                margin-bottom: 15px;
+            }
+            
+            .option-group {
+                margin-bottom: 10px;
+            }
+            
+            .option-title {
+                font-weight: bold;
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+                display: block;
+            }
+            
+            .option-select {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                background: white;
+            }
+            
+            /* Quantity Selector */
+            .quantity-selector {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+            
+            .quantity-btn {
+                background: #2c0902;
+                color: white;
+                border: none;
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            
+            .quantity-input {
+                width: 50px;
+                text-align: center;
+                margin: 0 10px;
+                height: 30px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+            
+            /* Add to Cart Button */
+            .add-to-cart {
+                width: 100%;
+                padding: 12px;
+                background: #2c0902;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+            
+            .add-to-cart:hover {
+                background: #2c0902;
+            }
+            
+            /* Cart Summary */
+            .cart-summary {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                margin-top: 40px;
+            }
+            
+            .cart-title {
+                font-size: 1.5rem;
+                color: #6F4E37;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 10px;
+            }
+            
+            .cart-items {
+                margin-bottom: 20px;
+                max-height: 300px;
+                overflow-y: auto;
+            }
+            
+            .cart-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .cart-item-details {
+                font-size: 0.9rem;
+                color: #666;
+            }
+            
+            .cart-total {
+                font-weight: bold;
+                font-size: 1.2rem;
+                text-align: right;
+                margin-top: 10px;
+            }
+            
+            .checkout-btn {
+                width: 100%;
+                padding: 15px;
+                background: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.1rem;
+                cursor: pointer;
+                margin-top: 20px;
+                transition: background 0.3s ease;
+            }
+            
+            .checkout-btn:hover {
+                background: #3e8e41;
+            }
+            
+            /* Special Offers Banner */
+            .offers-banner {
+                background: #2c0902;
+                color: white;
+                padding: 15px;
+                border-radius: 8px;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            
+            .offer-text {
+                font-weight: bold;
+            }
+            
+            /* Filter Options */
+            .filter-options {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            
+            .filter-btn {
+                padding: 8px 15px;
+                background: white;
+                border: 1px solid #ddd;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .filter-btn:hover, .filter-btn.active {
+                background: #2c0902;
+                color: white;
+                border-color: #2c0902;
+            }
+            
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .coffee-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                }
+            }
+        </style>
+    <body>
+        <div class="container">
+            <h1>Our Premium Coffee Selection</h1>
+            
+            <div class="offers-banner">
+                <p class="offer-text">☕ Today's Special: Buy 3 coffees get 1 free! ☕</p>
+            </div>
+            
+            <div class="filter-options">
+                <button class="filter-btn active">All Coffees</button>
+                <button class="filter-btn">Hot Coffees</button>
+                <button class="filter-btn">Iced Coffees</button>
+                <button class="filter-btn">Specialty Drinks</button>
+                <button class="filter-btn">Under $4</button>
+            </div>
+            
+            <div class="coffee-grid">
+                <!-- Coffee Card 1 -->
+                <div class="coffee-card">
+                    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Espresso" class="coffee-img">
+                    <div class="coffee-info">
+                        <h3 class="coffee-name">Espresso</h3>
+                        <p class="coffee-desc">A strong, concentrated coffee served in small shots. Perfect for those who enjoy intense flavor.</p>
+                        <p class="coffee-price">$3.50</p>
+                        
+                        <div class="customization-options">
+                            <div class="option-group">
+                                <span class="option-title">Size:</span>
+                                <select class="option-select">
+                                    <option>Single Shot</option>
+                                    <option>Double Shot (+$1.00)</option>
+                                    <option>Triple Shot (+$2.00)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Milk:</span>
+                                <select class="option-select">
+                                    <option>None</option>
+                                    <option>Whole Milk</option>
+                                    <option>Almond Milk (+$0.50)</option>
+                                    <option>Oat Milk (+$0.50)</option>
+                                    <option>Soy Milk (+$0.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Sweetness:</span>
+                                <select class="option-select">
+                                    <option>No sugar</option>
+                                    <option>1 Sugar</option>
+                                    <option>2 Sugars</option>
+                                    <option>3 Sugars</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Coffee Card 2 -->
+                <div class="coffee-card">
+                    <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cappuccino" class="coffee-img">
+                    <div class="coffee-info">
+                        <h3 class="coffee-name">Cappuccino</h3>
+                        <p class="coffee-desc">Espresso with steamed milk and a silky layer of foam. A classic Italian favorite.</p>
+                        <p class="coffee-price">$4.25</p>
+                        
+                        <div class="customization-options">
+                            <div class="option-group">
+                                <span class="option-title">Size:</span>
+                                <select class="option-select">
+                                    <option>Regular (8oz)</option>
+                                    <option>Large (12oz) (+$0.75)</option>
+                                    <option>Extra Large (16oz) (+$1.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Milk:</span>
+                                <select class="option-select">
+                                    <option>Whole Milk</option>
+                                    <option>Skim Milk</option>
+                                    <option>Almond Milk (+$0.50)</option>
+                                    <option>Oat Milk (+$0.50)</option>
+                                    <option>Soy Milk (+$0.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Flavor:</span>
+                                <select class="option-select">
+                                    <option>None</option>
+                                    <option>Vanilla (+$0.50)</option>
+                                    <option>Caramel (+$0.50)</option>
+                                    <option>Hazelnut (+$0.50)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Coffee Card 3 -->
+                <div class="coffee-card">
+                    <img src="https://images.unsplash.com/photo-1568649929103-28ffbefaca1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Iced Latte" class="coffee-img">
+                    <div class="coffee-info">
+                        <h3 class="coffee-name">Iced Latte</h3>
+                        <p class="coffee-desc">Espresso chilled with milk and ice for a refreshing coffee experience.</p>
+                        <p class="coffee-price">$4.75</p>
+                        
+                        <div class="customization-options">
+                            <div class="option-group">
+                                <span class="option-title">Size:</span>
+                                <select class="option-select">
+                                    <option>Regular (12oz)</option>
+                                    <option>Large (16oz) (+$0.75)</option>
+                                    <option>Extra Large (20oz) (+$1.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Milk:</span>
+                                <select class="option-select">
+                                    <option>Whole Milk</option>
+                                    <option>Skim Milk</option>
+                                    <option>Almond Milk (+$0.50)</option>
+                                    <option>Oat Milk (+$0.50)</option>
+                                    <option>Coconut Milk (+$0.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Ice Level:</span>
+                                <select class="option-select">
+                                    <option>Normal</option>
+                                    <option>Light Ice</option>
+                                    <option>Extra Ice</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Coffee Card 4 -->
+                <div class="coffee-card">
+                    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Caramel Macchiato" class="coffee-img">
+                    <div class="coffee-info">
+                        <h3 class="coffee-name">Caramel Macchiato</h3>
+                        <p class="coffee-desc">Espresso with vanilla-flavored syrup, steamed milk, and caramel drizzle.</p>
+                        <p class="coffee-price">$5.25</p>
+                        
+                        <div class="customization-options">
+                            <div class="option-group">
+                                <span class="option-title">Size:</span>
+                                <select class="option-select">
+                                    <option>Regular (12oz)</option>
+                                    <option>Large (16oz) (+$0.75)</option>
+                                    <option>Extra Large (20oz) (+$1.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Milk:</span>
+                                <select class="option-select">
+                                    <option>Whole Milk</option>
+                                    <option>Skim Milk</option>
+                                    <option>Almond Milk (+$0.50)</option>
+                                    <option>Oat Milk (+$0.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Caramel:</span>
+                                <select class="option-select">
+                                    <option>Normal</option>
+                                    <option>Light</option>
+                                    <option>Extra (+$0.50)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Coffee Card 5 -->
+                <div class="coffee-card">
+                    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Turkish Coffee" class="coffee-img">
+                    <div class="coffee-info">
+                        <h3 class="coffee-name">Turkish Coffee</h3>
+                        <p class="coffee-desc">Finely ground coffee brewed with sugar and cardamom in a special pot.</p>
+                        <p class="coffee-price">$4.50</p>
+                        
+                        <div class="customization-options">
+                            <div class="option-group">
+                                <span class="option-title">Sweetness:</span>
+                                <select class="option-select">
+                                    <option>Unsweetened</option>
+                                    <option>Medium Sweet</option>
+                                    <option>Very Sweet</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Cardamom:</span>
+                                <select class="option-select">
+                                    <option>Normal</option>
+                                    <option>Extra (+$0.25)</option>
+                                    <option>None</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Coffee Card 6 -->
+                <div class="coffee-card">
+                    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cold Brew" class="coffee-img">
+                    <div class="coffee-info">
+                        <h3 class="coffee-name">Cold Brew</h3>
+                        <p class="coffee-desc">Coffee steeped in cold water for 12+ hours, resulting in a smooth, less acidic flavor.</p>
+                        <p class="coffee-price">$4.00</p>
+                        
+                        <div class="customization-options">
+                            <div class="option-group">
+                                <span class="option-title">Size:</span>
+                                <select class="option-select">
+                                    <option>Regular (12oz)</option>
+                                    <option>Large (16oz) (+$0.75)</option>
+                                    <option>Extra Large (20oz) (+$1.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Milk:</span>
+                                <select class="option-select">
+                                    <option>None</option>
+                                    <option>Whole Milk</option>
+                                    <option>Almond Milk (+$0.50)</option>
+                                    <option>Oat Milk (+$0.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Sweetener:</span>
+                                <select class="option-select">
+                                    <option>None</option>
+                                    <option>Sugar</option>
+                                    <option>Honey (+$0.25)</option>
+                                    <option>Vanilla Syrup (+$0.50)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Coffee Card 7 -->
+                <div class="coffee-card">
+                    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Flat White" class="coffee-img">
+                    <div class="coffee-info">
+                        <h3 class="coffee-name">Flat White</h3>
+                        <p class="coffee-desc">Similar to a latte but with a higher ratio of coffee to milk and microfoam.</p>
+                        <p class="coffee-price">$4.50</p>
+                        
+                        <div class="customization-options">
+                            <div class="option-group">
+                                <span class="option-title">Size:</span>
+                                <select class="option-select">
+                                    <option>Regular (8oz)</option>
+                                    <option>Large (12oz) (+$0.75)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Milk:</span>
+                                <select class="option-select">
+                                    <option>Whole Milk</option>
+                                    <option>Skim Milk</option>
+                                    <option>Oat Milk (+$0.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Strength:</span>
+                                <select class="option-select">
+                                    <option>Normal</option>
+                                    <option>Strong (+$0.50)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Coffee Card 8 -->
+                <div class="coffee-card">
+                    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Affogato" class="coffee-img">
+                    <div class="coffee-info">
+                        <h3 class="coffee-name">Affogato</h3>
+                        <p class="coffee-desc">A dessert of vanilla ice cream "drowned" with a shot of hot espresso.</p>
+                        <p class="coffee-price">$5.50</p>
+                        
+                        <div class="customization-options">
+                            <div class="option-group">
+                                <span class="option-title">Ice Cream:</span>
+                                <select class="option-select">
+                                    <option>Vanilla</option>
+                                    <option>Chocolate (+$0.50)</option>
+                                    <option>Caramel (+$0.50)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Espresso:</span>
+                                <select class="option-select">
+                                    <option>Single Shot</option>
+                                    <option>Double Shot (+$1.00)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <span class="option-title">Toppings:</span>
+                                <select class="option-select">
+                                    <option>None</option>
+                                    <option>Whipped Cream (+$0.50)</option>
+                                    <option>Chocolate Sauce (+$0.50)</option>
+                                    <option>Caramel Drizzle (+$0.50)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <h2 class="cart-title">Your Order</h2>
+                <div class="cart-items">
+                    <!-- Cart items will be added here dynamically -->
+                    <p style="text-align: center; color: #888;">Your cart is empty</p>
+                </div>
+                <div class="cart-total">
+                    Total: $0.00
+                </div>
+                <button class="checkout-btn" onclick="window.location.href='login.html'">Proceed to Checkout</button>
+            </div>
+        </div>
+        
+        <script>
+            // Simple JavaScript to handle quantity changes
+            document.querySelectorAll('.quantity-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('.quantity-input');
+                    let value = parseInt(input.value);
+                    
+                    if (this.classList.contains('minus')) {
+                        if (value > 1) {
+                            input.value = value - 1;
+                        }
+                    } else if (this.classList.contains('plus')) {
+                        input.value = value + 1;
+                    }
+                });
+            });
+            
+            // Filter functionality
+            document.querySelectorAll('.filter-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    // In a real implementation, you would filter the coffee items here
+                });
+            });
+            
+            // Add to cart functionality would be more complex in a real implementation
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const coffeeCard = this.closest('.coffee-card');
+                    const name = coffeeCard.querySelector('.coffee-name').textContent;
+                    const price = coffeeCard.querySelector('.coffee-price').textContent;
+                    const quantity = coffeeCard.querySelector('.quantity-input').value;
+                    
+                    // Get selected options
+                    const options = [];
+                    coffeeCard.querySelectorAll('.option-select').forEach(select => {
+                        const optionName = select.parentElement.querySelector('.option-title').textContent;
+                        const selectedValue = select.options[select.selectedIndex].text;
+                        options.push(`${optionName}: ${selectedValue}`);
+                    });
+                    
+                    alert(`Added ${quantity} ${name} to cart!\n\nCustomizations:\n${options.join('\n')}`);
+                    // In a real implementation, you would update the cart summary here
+                });
+            });
+        </script>
+    </body>
+    </html>
+    
+          <!-- copyright section start -->
+      <div class="copyright_section">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-6 col-sm-12">
+                 <p class="copyright_text">2025 All Rights Reserved. Design by Harres Radhwane</a></p>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                 <div class="footer_social_icon">
+                    <ul>
+                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                       <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                       <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    </ul>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <!-- copyright section end -->
+     <!-- Javascript files-->
+     <script src="js/jquery.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.bundle.min.js"></script>
+     <script src="js/jquery-3.0.0.min.js"></script>
+     <script src="js/plugin.js"></script>
+     <script src="js/LOADER.js"></script>
+     <script src="js/VIDEO.js"></script>
+     <!-- sidebar -->
+     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+     <script src="js/custom.js"></script>
+  </body>
+</html>

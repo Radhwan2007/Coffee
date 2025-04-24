@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Blog</title>
+      <link rel="icon" href="images/logo2.png" type="image/png">
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" href="css/Loader.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Font Awesome for icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   </head>
+   <body>
+      <div class="loader-container" id="loader">
+         <div class="coffee-cup">
+             <div class="coffee"></div>
+         </div>
+         <div class="loader-text">Brewing your experience...</div>
+     </div>
+      <div class="header_section header_bg">
+         <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="navbar-brand"href="index.html"><img src="images/logo2.png" style="height: 40px;"></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="Home.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="coffees.html">Coffees</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                     </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                     <div class="login_bt">
+                        <ul>
+                           <li><a href="#"><span class="user_icon"><i class="fa fa-user" aria-hidden="true"></i></span>Login</a></li>
+                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                        </ul>
+                     </div>
+                  </form>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+      <style>
+         /* Global Styles */
+         * {
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         }
+         
+         body {
+             background-color: #f9f5f0;
+             color: #333;
+             line-height: 1.6;
+         }
+         
+         .container {
+             max-width: 1200px;
+             margin: 0 auto;
+             padding: 40px 20px;
+         }
+         
+         .section-title {
+             text-align: center;
+             margin-bottom: 50px;
+             color: #6F4E37;
+             font-size: 2.8rem;
+             position: relative;
+             font-weight: 300;
+         }
+         
+         .section-title:after {
+             content: "";
+             display: block;
+             width: 100px;
+             height: 4px;
+             background: #d4a76a;
+             margin: 15px auto;
+             border-radius: 2px;
+         }
+         
+         .section-intro {
+             text-align: center;
+             max-width: 700px;
+             margin: 0 auto 50px;
+             color: #555;
+             font-size: 1.1rem;
+         }
+         
+         /* Blog Grid */
+         .blog-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+             gap: 40px;
+             margin-bottom: 60px;
+         }
+         
+         .blog-card {
+             background: white;
+             border-radius: 10px;
+             overflow: hidden;
+             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+             display: flex;
+             flex-direction: column;
+         }
+         
+         .blog-card:hover {
+             transform: translateY(-10px);
+             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+         }
+         
+         .blog-image {
+             height: 220px;
+             overflow: hidden;
+             position: relative;
+         }
+         
+         .blog-image img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             transition: transform 0.5s ease;
+         }
+         
+         .blog-card:hover .blog-image img {
+             transform: scale(1.1);
+         }
+         
+         .blog-category {
+             position: absolute;
+             top: 15px;
+             right: 15px;
+             background: #6F4E37;
+             color: white;
+             padding: 5px 15px;
+             border-radius: 20px;
+             font-size: 0.8rem;
+             text-transform: uppercase;
+             letter-spacing: 1px;
+         }
+         
+         .blog-content {
+             padding: 25px;
+             flex-grow: 1;
+             display: flex;
+             flex-direction: column;
+         }
+         
+         .blog-date {
+             color: #d4a76a;
+             font-size: 0.9rem;
+             margin-bottom: 10px;
+             display: flex;
+             align-items: center;
+         }
+         
+         .blog-date i {
+             margin-right: 8px;
+         }
+         
+         .blog-title {
+             font-size: 1.5rem;
+             color: #6F4E37;
+             margin-bottom: 15px;
+             line-height: 1.4;
+         }
+         
+         .blog-excerpt {
+             color: #666;
+             margin-bottom: 20px;
+             flex-grow: 1;
+         }
+         
+         .blog-meta {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             margin-top: 20px;
+             padding-top: 15px;
+             border-top: 1px solid #eee;
+             font-size: 0.9rem;
+         }
+         
+         .blog-author {
+             display: flex;
+             align-items: center;
+         }
+         
+         .author-avatar {
+             width: 30px;
+             height: 30px;
+             border-radius: 50%;
+             margin-right: 10px;
+             object-fit: cover;
+         }
+         
+         .read-time {
+             color: #888;
+             display: flex;
+             align-items: center;
+         }
+         
+         .read-time i {
+             margin-right: 5px;
+         }
+         
+         .read-more {
+             display: inline-block;
+             margin-top: 15px;
+             color: #6F4E37;
+             font-weight: 600;
+             text-decoration: none;
+             transition: color 0.3s ease;
+         }
+         
+         .read-more:hover {
+             color: #d4a76a;
+         }
+         
+         /* Featured Post */
+         .featured-post {
+             display: grid;
+             grid-template-columns: 1fr 1fr;
+             gap: 40px;
+             background: white;
+             border-radius: 10px;
+             overflow: hidden;
+             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+             margin-bottom: 60px;
+         }
+         
+         .featured-image {
+             height: 400px;
+         }
+         
+         .featured-image img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+         }
+         
+         .featured-content {
+             padding: 40px;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+         }
+         
+         .featured-category {
+             color: #d4a76a;
+             font-size: 0.9rem;
+             text-transform: uppercase;
+             letter-spacing: 1px;
+             margin-bottom: 15px;
+         }
+         
+         .featured-title {
+             font-size: 2rem;
+             color: #6F4E37;
+             margin-bottom: 20px;
+             line-height: 1.4;
+         }
+         
+         .featured-excerpt {
+             color: #666;
+             margin-bottom: 25px;
+             font-size: 1.1rem;
+             line-height: 1.8;
+         }
+         
+         .featured-meta {
+             display: flex;
+             align-items: center;
+             margin-bottom: 25px;
+         }
+         
+         .featured-author {
+             display: flex;
+             align-items: center;
+             margin-right: 20px;
+         }
+         
+         .featured-avatar {
+             width: 40px;
+             height: 40px;
+             border-radius: 50%;
+             margin-right: 10px;
+             object-fit: cover;
+         }
+         
+         .featured-date {
+             color: #888;
+             font-size: 0.9rem;
+         }
+         
+         .btn {
+             display: inline-block;
+             padding: 12px 25px;
+             background: #6F4E37;
+             color: white;
+             border-radius: 30px;
+             text-decoration: none;
+             transition: background 0.3s ease;
+             align-self: flex-start;
+         }
+         
+         .btn:hover {
+             background: #5a3c29;
+         }
+         
+         /* Categories */
+         .categories-section {
+             margin-bottom: 60px;
+         }
+         
+         .categories-title {
+             font-size: 1.5rem;
+             color: #6F4E37;
+             margin-bottom: 25px;
+             text-align: center;
+         }
+         
+         .categories-grid {
+             display: flex;
+             flex-wrap: wrap;
+             justify-content: center;
+             gap: 15px;
+         }
+         
+         .category-tag {
+             padding: 10px 25px;
+             background: white;
+             border-radius: 30px;
+             color: #6F4E37;
+             text-decoration: none;
+             transition: all 0.3s ease;
+             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+         }
+         
+         .category-tag:hover {
+             background: #6F4E37;
+             color: white;
+             transform: translateY(-3px);
+         }
+         
+         /* Newsletter */
+         .newsletter-section {
+             background: #6F4E37;
+             padding: 50px;
+             border-radius: 10px;
+             text-align: center;
+             margin-bottom: 60px;
+         }
+         
+         .newsletter-title {
+             color: white;
+             font-size: 1.8rem;
+             margin-bottom: 15px;
+         }
+         
+         .newsletter-desc {
+             color: rgba(255, 255, 255, 0.8);
+             max-width: 600px;
+             margin: 0 auto 25px;
+         }
+         
+         .newsletter-form {
+             display: flex;
+             max-width: 500px;
+             margin: 0 auto;
+         }
+         
+         .newsletter-input {
+             flex-grow: 1;
+             padding: 15px;
+             border: none;
+             border-radius: 30px 0 0 30px;
+             font-size: 1rem;
+         }
+         
+         .newsletter-btn {
+             padding: 15px 25px;
+             background: #d4a76a;
+             color: white;
+             border: none;
+             border-radius: 0 30px 30px 0;
+             cursor: pointer;
+             transition: background 0.3s ease;
+             font-size: 1rem;
+         }
+         
+         .newsletter-btn:hover {
+             background: #c29555;
+         }
+         
+         /* Pagination */
+         .pagination {
+             display: flex;
+             justify-content: center;
+             gap: 10px;
+             margin-top: 40px;
+         }
+         
+         .page-link {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             width: 40px;
+             height: 40px;
+             border-radius: 50%;
+             background: white;
+             color: #6F4E37;
+             text-decoration: none;
+             transition: all 0.3s ease;
+             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+         }
+         
+         .page-link:hover, .page-link.active {
+             background: #6F4E37;
+             color: white;
+         }
+         
+         /* Responsive Design */
+         @media (max-width: 900px) {
+             .featured-post {
+                 grid-template-columns: 1fr;
+             }
+             
+             .featured-image {
+                 height: 300px;
+             }
+         }
+         
+         @media (max-width: 768px) {
+             .section-title {
+                 font-size: 2.2rem;
+             }
+             
+             .blog-grid {
+                 grid-template-columns: 1fr;
+             }
+             
+             .newsletter-form {
+                 flex-direction: column;
+             }
+             
+             .newsletter-input {
+                 border-radius: 30px;
+                 margin-bottom: 10px;
+             }
+             
+             .newsletter-btn {
+                 border-radius: 30px;
+             }
+         }
+     </style>
+ <body>
+     <div class="container">
+         <h1 class="section-title">The Daily Grind</h1>
+         <p class="section-intro">
+             Dive into our coffee blog featuring brewing guides, industry news, origin stories, and barista tips.
+             Whether you're a coffee novice or a seasoned enthusiast, there's always something new to discover.
+         </p>
+         
+         <!-- Featured Post -->
+         <div class="featured-post">
+             <div class="featured-image">
+                 <img src="https://images.unsplash.com/photo-1461988091159-192b6df7054f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Coffee Brewing Methods">
+             </div>
+             <div class="featured-content">
+                 <span class="featured-category">Brewing Guide</span>
+                 <h2 class="featured-title">Mastering Pour Over: A Step-by-Step Guide to Perfect Extraction</h2>
+                 <p class="featured-excerpt">
+                     Discover the art of pour over coffee with our comprehensive guide. We break down the variables 
+                     that affect extraction and share professional techniques to help you brew cafe-quality coffee 
+                     at home every time.
+                 </p>
+                 <div class="featured-meta">
+                     <div class="featured-author">
+                         <img src="images/82288486b5da113403ded5a4f886fc63.jpg" alt="Sarah Johnson" class="featured-avatar">
+                         <span>Sarah Johnson</span>
+                     </div>
+                     <div class="featured-date">
+                         <i class="far fa-calendar-alt"></i> May 15, 2023
+                     </div>
+                 </div>
+                 <a href="#" class="btn">Read Article</a>
+             </div>
+         </div>
+         
+         <!-- Blog Grid -->
+         <div class="blog-grid">
+             <!-- Blog Post 1 -->
+             <div class="blog-card">
+                 <div class="blog-image">
+                     <img src="https://images.unsplash.com/photo-1461988091159-192b6df7054f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Ethiopian Coffee">
+                     <span class="blog-category">Origin Story</span>
+                 </div>
+                 <div class="blog-content">
+                     <div class="blog-date">
+                         <i class="far fa-calendar-alt"></i> April 28, 2023
+                     </div>
+                     <h3 class="blog-title">The Birthplace of Coffee: Exploring Ethiopia's Ancient Traditions</h3>
+                     <p class="blog-excerpt">
+                         Journey to the highlands of Ethiopia where coffee was first discovered. Learn about 
+                         traditional coffee ceremonies and how they've shaped global coffee culture.
+                     </p>
+                     <a href="#" class="read-more">Continue Reading →</a>
+                     <div class="blog-meta">
+                         <div class="blog-author">
+                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=60" alt="Michael Chen" class="author-avatar">
+                             <span>Michael Chen</span>
+                         </div>
+                         <div class="read-time">
+                             <i class="far fa-clock"></i> 6 min
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!-- Blog Post 2 -->
+             <div class="blog-card">
+                 <div class="blog-image">
+                     <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Latte Art">
+                     <span class="blog-category">Barista Skills</span>
+                 </div>
+                 <div class="blog-content">
+                     <div class="blog-date">
+                         <i class="far fa-calendar-alt"></i> April 15, 2023
+                     </div>
+                     <h3 class="blog-title">Latte Art 101: Essential Techniques for Beginners</h3>
+                     <p class="blog-excerpt">
+                         Start your latte art journey with these fundamental techniques. From proper milk 
+                         steaming to pouring basic hearts and rosettas, we cover everything you need to know.
+                     </p>
+                     <a href="#" class="read-more">Continue Reading →</a>
+                     <div class="blog-meta">
+                         <div class="blog-author">
+                             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=60" alt="Elena Rodriguez" class="author-avatar">
+                             <span>Elena Rodriguez</span>
+                         </div>
+                         <div class="read-time">
+                             <i class="far fa-clock"></i> 8 min
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!-- Blog Post 3 -->
+             <div class="blog-card">
+                 <div class="blog-image">
+                     <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Coffee Equipment">
+                     <span class="blog-category">Gear Review</span>
+                 </div>
+                 <div class="blog-content">
+                     <div class="blog-date">
+                         <i class="far fa-calendar-alt"></i> March 30, 2023
+                     </div>
+                     <h3 class="blog-title">2023's Best Home Espresso Machines for Every Budget</h3>
+                     <p class="blog-excerpt">
+                         We tested 15 home espresso machines to bring you the top picks. Whether you have 
+                         $200 or $2000 to spend, find the perfect machine for your home setup.
+                     </p>
+                     <a href="#" class="read-more">Continue Reading →</a>
+                     <div class="blog-meta">
+                         <div class="blog-author">
+                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=60" alt="David Kim" class="author-avatar">
+                             <span>David Kim</span>
+                         </div>
+                         <div class="read-time">
+                             <i class="far fa-clock"></i> 12 min
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!-- Blog Post 4 -->
+             <div class="blog-card">
+                 <div class="blog-image">
+                     <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Coffee Farm">
+                     <span class="blog-category">Sustainability</span>
+                 </div>
+                 <div class="blog-content">
+                     <div class="blog-date">
+                         <i class="far fa-calendar-alt"></i> March 18, 2023
+                     </div>
+                     <h3 class="blog-title">How Climate Change is Affecting Coffee Production Worldwide</h3>
+                     <p class="blog-excerpt">
+                         An in-depth look at how rising temperatures are impacting coffee-growing regions 
+                         and what farmers are doing to adapt to these challenging conditions.
+                     </p>
+                     <a href="#" class="read-more">Continue Reading →</a>
+                     <div class="blog-meta">
+                         <div class="blog-author">
+                             <img src="images/82288486b5da113403ded5a4f886fc63.jpg" alt="Sarah Johnson" class="author-avatar">
+                             <span>Sarah Johnson</span>
+                         </div>
+                         <div class="read-time">
+                             <i class="far fa-clock"></i> 10 min
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!-- Blog Post 5 -->
+             <div class="blog-card">
+                 <div class="blog-image">
+                     <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Coffee Recipes">
+                     <span class="blog-category">Recipes</span>
+                 </div>
+                 <div class="blog-content">
+                     <div class="blog-date">
+                         <i class="far fa-calendar-alt"></i> March 5, 2023
+                     </div>
+                     <h3 class="blog-title">5 Iced Coffee Recipes to Beat the Summer Heat</h3>
+                     <p class="blog-excerpt">
+                         From classic cold brew to creative coffee cocktails, these refreshing recipes will 
+                         keep you cool all summer long. Plus tips for avoiding diluted drinks!
+                     </p>
+                     <a href="#" class="read-more">Continue Reading →</a>
+                     <div class="blog-meta">
+                         <div class="blog-author">
+                             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=60" alt="Elena Rodriguez" class="author-avatar">
+                             <span>Elena Rodriguez</span>
+                         </div>
+                         <div class="read-time">
+                             <i class="far fa-clock"></i> 7 min
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             
+             <!-- Blog Post 6 -->
+             <div class="blog-card">
+                 <div class="blog-image">
+                     <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Coffee Science">
+                     <span class="blog-category">Science</span>
+                 </div>
+                 <div class="blog-content">
+                     <div class="blog-date">
+                         <i class="far fa-calendar-alt"></i> February 22, 2023
+                     </div>
+                     <h3 class="blog-title">The Chemistry of Coffee: What Happens During Roasting?</h3>
+                     <p class="blog-excerpt">
+                         Explore the Maillard reaction, caramelization, and other chemical processes that 
+                         transform green coffee beans into the aromatic brown beans we know and love.
+                     </p>
+                     <a href="#" class="read-more">Continue Reading →</a>
+                     <div class="blog-meta">
+                         <div class="blog-author">
+                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=60" alt="Michael Chen" class="author-avatar">
+                             <span>Michael Chen</span>
+                         </div>
+                         <div class="read-time">
+                             <i class="far fa-clock"></i> 9 min
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         
+         <!-- Categories -->
+         <div class="categories-section">
+             <h3 class="categories-title">Browse by Category</h3>
+             <div class="categories-grid">
+                 <a href="#" class="category-tag">Brewing Guides</a>
+                 <a href="#" class="category-tag">Origin Stories</a>
+                 <a href="#" class="category-tag">Barista Skills</a>
+                 <a href="#" class="category-tag">Gear Reviews</a>
+                 <a href="#" class="category-tag">Sustainability</a>
+                 <a href="#" class="category-tag">Recipes</a>
+                 <a href="#" class="category-tag">Coffee Science</a>
+                 <a href="#" class="category-tag">Industry News</a>
+             </div>
+         </div>
+         
+         <!-- Newsletter -->
+         <div class="newsletter-section">
+             <h3 class="newsletter-title">Get Our Coffee Newsletter</h3>
+             <p class="newsletter-desc">
+                 Join our community of coffee lovers! Get weekly articles, exclusive deals, and brewing tips 
+                 delivered straight to your inbox.
+             </p>
+             <form class="newsletter-form">
+                 <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                 <button type="submit" class="newsletter-btn">Subscribe</button>
+             </form>
+         </div>
+         
+         <!-- Pagination -->
+         <div class="pagination">
+             <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
+             <a href="#" class="page-link active">1</a>
+             <a href="#" class="page-link">2</a>
+             <a href="#" class="page-link">3</a>
+             <a href="#" class="page-link">4</a>
+             <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+         </div>
+     </div>
+      <!-- footer section start -->
+      <div class="footer_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h1 class="address_text">Address</h1>
+                  <p class="footer_text">here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use </p>
+                  <div class="location_text">
+                     <ul>
+                        <li>
+                           <a href="#">
+                           <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">+01 1234567890</span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                           <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">demo@gmail.com</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="form-group">
+                     <textarea class="update_mail" placeholder="Your Email" rows="5" id="comment" name="Your Email"></textarea>
+                     <div class="subscribe_bt"><a href="#"><img src="images/teligram-icon.png"></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-sm-12">
+                  <p class="copyright_text">2025 All Rights Reserved. Design by Harres Radhwane</a></p>
+               </div>
+               <div class="col-lg-6 col-sm-12">
+                  <div class="footer_social_icon">
+                     <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/LOADER.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Loader.css">
+    <title>Bean Haven - Secure Login</title>
+    <link rel="icon" href="images/logo2.png" type="image/png">   
+    <style>
+        /* Coffee Theme Colors */
+        :root {
+            --coffee-dark: #3E2723;
+            --coffee-medium: #6F4E37;
+            --coffee-light: #D4A76A;
+            --coffee-cream: #F9F5F0;
+            --coffee-error: #D32F2F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--coffee-cream);
+            color: var(--coffee-dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(62, 39, 35, 0.7);
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--coffee-light), var(--coffee-medium));
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h1 {
+            color: var(--coffee-medium);
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            color: var(--coffee-medium);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--coffee-light);
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--coffee-medium);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: var(--coffee-cream);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--coffee-light);
+            box-shadow: 0 0 0 3px rgba(212, 167, 106, 0.2);
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--coffee-medium);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--coffee-medium);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: var(--coffee-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-me input {
+            margin-right: 5px;
+        }
+
+        .forgot-password a {
+            color: var(--coffee-medium);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password a:hover {
+            color: var(--coffee-dark);
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: var(--coffee-error);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .security-info {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.8rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .security-info i {
+            color: var(--coffee-light);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .shake {
+            animation: shake 0.5s linear;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        /* Loading spinner */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="loader-container" id="loader">
+        <div class="coffee-cup">
+            <div class="coffee"></div>
+        </div>
+        <div class="loader-text">Brewing your experience...</div>
+    </div>
+    <div class="login-container">
+        <div class="logo">
+            <i class="fas fa-coffee"></i>
+            <h1>Bean Haven</h1>
+            <p>login to your coffee account</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+                <div class="error-message" id="email-error">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                    <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                </div>
+                <div class="error-message" id="password-error">Password must be at least 8 characters</div>
+            </div>
+
+            <div class="remember-forgot">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+
+            <button type="submit" class="btn" id="loginBtn">
+                <span id="btnText">Log In</span>
+                <div class="spinner" id="spinner"></div>
+            </button>
+
+            <div class="security-info">
+                <i class="fas fa-lock"></i>
+                <span>Your information is securely encrypted</span>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            const togglePassword = document.getElementById('togglePassword');
+            const loginBtn = document.getElementById('loginBtn');
+            const btnText = document.getElementById('btnText');
+            const spinner = document.getElementById('spinner');
+            const emailError = document.getElementById('email-error');
+            const passwordError = document.getElementById('password-error');
+
+            // Toggle password visibility
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.classList.toggle('fa-eye-slash');
+            });
+
+            // Form validation
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset errors
+                emailError.style.display = 'none';
+                passwordError.style.display = 'none';
+                loginForm.classList.remove('shake');
+                
+                // Validate email
+                const emailValid = validateEmail(emailInput.value);
+                // Validate password (at least 8 chars)
+                const passwordValid = passwordInput.value.length >= 8;
+                
+                if (!emailValid || !passwordValid) {
+                    if (!emailValid) {
+                        emailError.style.display = 'block';
+                        emailInput.focus();
+                    }
+                    if (!passwordValid) {
+                        passwordError.style.display = 'block';
+                        if (emailValid) passwordInput.focus();
+                    }
+                    loginForm.classList.add('shake');
+                    return;
+                }
+                
+                // Simulate login process
+                simulateLogin();
+            });
+
+            // Email validation function
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            // Simulate login (replace with actual AJAX call)
+            function simulateLogin() {
+                // Show loading state
+                btnText.style.display = 'none';
+                spinner.style.display = 'block';
+                loginBtn.disabled = true;
+                
+                // Simulate API call delay
+                setTimeout(() => {
+                    // Hide loading state
+                    btnText.style.display = 'block';
+                    spinner.style.display = 'none';
+                    loginBtn.disabled = false;
+                    
+                    // Here you would typically handle the login response
+                    // For demo purposes, we'll just show an alert
+                    alert('Login successful! Redirecting to dashboard...');
+                    window.location.href = "A.Home.html";
+                    // window.location.href = 'dashboard.html';
+                }, 1500);
+            }
+
+            // Security: Prevent paste in password field (optional)
+            passwordInput.addEventListener('paste', function(e) {
+                e.preventDefault();
+                alert('For security reasons, pasting is disabled in the password field.');
+            });
+
+            // Security: Show password strength (optional)
+            passwordInput.addEventListener('input', function() {
+                // You could add password strength meter logic here
+            });
+        });
+    </script>
+          <script src="js/LOADER.js"></script>
+</body>
+</html>

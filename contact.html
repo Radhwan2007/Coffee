@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Contact</title>
+      <link rel="icon" href="images/logo2.png" type="image/png">
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" href="css/Loader.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Font Awesome for icons -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   </head>
+   <body>
+      <div class="loader-container" id="loader">
+         <div class="coffee-cup">
+             <div class="coffee"></div>
+         </div>
+         <div class="loader-text">Brewing your experience...</div>
+     </div>
+      <div class="header_section header_bg">
+         <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="navbar-brand"href="index.html"><img src="images/logo2.png" style="height: 40px;"></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                     <li class="nav-item">
+                        <a class="nav-link" href="Home.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="coffees.html">Coffees</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                     </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                     <div class="login_bt">
+                        <ul>
+                           <li><a href="#"><span class="user_icon"><i class="fa fa-user" aria-hidden="true"></i></span>Login</a></li>
+                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                        </ul>
+                     </div>
+                  </form>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- header section end -->
+
+          <style>
+              /* Global Styles */
+              * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              }
+              
+              body {
+                  background-color: #f9f5f0;
+                  color: #333;
+                  line-height: 1.6;
+              }
+              
+              .container {
+                  max-width: 1200px;
+                  margin: 0 auto;
+                  padding: 60px 20px;
+              }
+              
+              .section-title {
+                  text-align: center;
+                  margin-bottom: 50px;
+                  color: #6F4E37;
+                  font-size: 2.8rem;
+                  position: relative;
+                  font-weight: 300;
+              }
+              
+              .section-title:after {
+                  content: "";
+                  display: block;
+                  width: 100px;
+                  height: 4px;
+                  background: #d4a76a;
+                  margin: 15px auto;
+                  border-radius: 2px;
+              }
+              
+              .section-intro {
+                  text-align: center;
+                  max-width: 700px;
+                  margin: 0 auto 50px;
+                  color: #555;
+                  font-size: 1.1rem;
+              }
+              
+              /* Contact Layout */
+              .contact-container {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                  gap: 40px;
+              }
+              
+              /* Contact Info */
+              .contact-info {
+                  background: white;
+                  padding: 40px;
+                  border-radius: 10px;
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+              }
+              
+              .contact-info h2 {
+                  font-size: 1.8rem;
+                  color: #6F4E37;
+                  margin-bottom: 25px;
+                  font-weight: 300;
+              }
+              
+              .info-item {
+                  display: flex;
+                  margin-bottom: 25px;
+              }
+              
+              .info-icon {
+                  font-size: 1.5rem;
+                  color: #d4a76a;
+                  margin-right: 20px;
+                  margin-top: 3px;
+              }
+              
+              .info-content h3 {
+                  font-size: 1.2rem;
+                  color: #6F4E37;
+                  margin-bottom: 5px;
+              }
+              
+              .info-content p, .info-content a {
+                  color: #666;
+                  text-decoration: none;
+                  transition: color 0.3s ease;
+              }
+              
+              .info-content a:hover {
+                  color: #d4a76a;
+              }
+              
+              /* Business Hours */
+              .hours-section {
+                  margin-top: 40px;
+              }
+              
+              .hours-section h3 {
+                  font-size: 1.3rem;
+                  color: #6F4E37;
+                  margin-bottom: 15px;
+              }
+              
+              .hours-table {
+                  width: 100%;
+              }
+              
+              .hours-table tr {
+                  border-bottom: 1px solid #eee;
+              }
+              
+              .hours-table tr:last-child {
+                  border-bottom: none;
+              }
+              
+              .hours-table td {
+                  padding: 10px 0;
+                  color: #666;
+              }
+              
+              .hours-table td:first-child {
+                  font-weight: 500;
+              }
+              
+              /* Social Media */
+              .social-section {
+                  margin-top: 40px;
+              }
+              
+              .social-section h3 {
+                  font-size: 1.3rem;
+                  color: #6F4E37;
+                  margin-bottom: 15px;
+              }
+              
+              .social-links {
+                  display: flex;
+                  gap: 15px;
+              }
+              
+              .social-links a {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: #f0e6dd;
+                  color: #6F4E37;
+                  font-size: 1.2rem;
+                  transition: all 0.3s ease;
+              }
+              
+              .social-links a:hover {
+                  background: #6F4E37;
+                  color: white;
+                  transform: translateY(-3px);
+              }
+              
+              /* Contact Form */
+              .contact-form {
+                  background: white;
+                  padding: 40px;
+                  border-radius: 10px;
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+              }
+              
+              .contact-form h2 {
+                  font-size: 1.8rem;
+                  color: #6F4E37;
+                  margin-bottom: 25px;
+                  font-weight: 300;
+              }
+              
+              .form-group {
+                  margin-bottom: 20px;
+              }
+              
+              .form-group label {
+                  display: block;
+                  margin-bottom: 8px;
+                  color: #6F4E37;
+                  font-weight: 500;
+              }
+              
+              .form-control {
+                  width: 100%;
+                  padding: 12px 15px;
+                  border: 1px solid #ddd;
+                  border-radius: 5px;
+                  font-size: 1rem;
+                  transition: border-color 0.3s ease;
+              }
+              
+              .form-control:focus {
+                  outline: none;
+                  border-color: #d4a76a;
+              }
+              
+              textarea.form-control {
+                  min-height: 150px;
+                  resize: vertical;
+              }
+              
+              .submit-btn {
+                  background: #6F4E37;
+                  color: white;
+                  border: none;
+                  padding: 12px 25px;
+                  border-radius: 30px;
+                  font-size: 1rem;
+                  cursor: pointer;
+                  transition: background 0.3s ease;
+              }
+              
+              .submit-btn:hover {
+                  background: #5a3c29;
+              }
+              
+              /* Map */
+              .map-container {
+                  margin-top: 60px;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                  height: 400px;
+              }
+              
+              .map-container iframe {
+                  width: 100%;
+                  height: 100%;
+                  border: none;
+              }
+              
+              /* FAQ Section */
+              .faq-section {
+                  margin-top: 60px;
+              }
+              
+              .faq-title {
+                  text-align: center;
+                  font-size: 2rem;
+                  color: #6F4E37;
+                  margin-bottom: 40px;
+                  font-weight: 300;
+              }
+              
+              .faq-item {
+                  background: white;
+                  margin-bottom: 15px;
+                  border-radius: 8px;
+                  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+                  overflow: hidden;
+              }
+              
+              .faq-question {
+                  padding: 20px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  cursor: pointer;
+                  background: #f9f5f0;
+                  transition: background 0.3s ease;
+              }
+              
+              .faq-question:hover {
+                  background: #f0e6dd;
+              }
+              
+              .faq-question h3 {
+                  font-size: 1.1rem;
+                  color: #6F4E37;
+                  font-weight: 500;
+              }
+              
+              .faq-question i {
+                  color: #d4a76a;
+                  transition: transform 0.3s ease;
+              }
+              
+              .faq-answer {
+                  padding: 0 20px;
+                  max-height: 0;
+                  overflow: hidden;
+                  transition: max-height 0.3s ease, padding 0.3s ease;
+              }
+              
+              .faq-answer p {
+                  color: #666;
+                  padding: 0 0 20px;
+              }
+              
+              .faq-item.active .faq-question i {
+                  transform: rotate(180deg);
+              }
+              
+              .faq-item.active .faq-answer {
+                  max-height: 300px;
+                  padding: 0 20px 20px;
+              }
+              
+              /* Responsive Design */
+              @media (max-width: 768px) {
+                  .section-title {
+                      font-size: 2.2rem;
+                  }
+                  
+                  .contact-container {
+                      grid-template-columns: 1fr;
+                  }
+              }
+          </style>
+      <body>
+          <div class="container">
+              <h1 class="section-title">Get In Touch</h1>
+              <p class="section-intro">
+                  We'd love to hear from you! Whether you have questions about our coffee, want to host an event,
+                  or just want to say hello, our team is here to help.
+              </p>
+              
+              <div class="contact-container">
+                  <!-- Contact Information -->
+                  <div class="contact-info">
+                      <h2>Contact Information</h2>
+                      
+                      <div class="info-item">
+                          <div class="info-icon">
+                              <i class="fas fa-map-marker-alt"></i>
+                          </div>
+                          <div class="info-content">
+                              <h3>Our Location</h3>
+                              <p>123 Coffee Bean Street<br>Portland, OR 97204</p>
+                          </div>
+                      </div>
+                      
+                      <div class="info-item">
+                          <div class="info-icon">
+                              <i class="fas fa-phone-alt"></i>
+                          </div>
+                          <div class="info-content">
+                              <h3>Phone</h3>
+                              <p><a href="tel:+15035551234">(503) 555-1234</a></p>
+                          </div>
+                      </div>
+                      
+                      <div class="info-item">
+                          <div class="info-icon">
+                              <i class="fas fa-envelope"></i>
+                          </div>
+                          <div class="info-content">
+                              <h3>Email</h3>
+                              <p><a href="mailto:hello@beanhaven.com">hello@beanhaven.com</a></p>
+                          </div>
+                      </div>
+                      
+                      <div class="info-item">
+                          <div class="info-icon">
+                              <i class="fas fa-coffee"></i>
+                          </div>
+                          <div class="info-content">
+                              <h3>Wholesale Inquiries</h3>
+                              <p><a href="mailto:wholesale@beanhaven.com">wholesale@beanhaven.com</a></p>
+                          </div>
+                      </div>
+                      
+                      <!-- Business Hours -->
+                      <div class="hours-section">
+                          <h3>Business Hours</h3>
+                          <table class="hours-table">
+                              <tr>
+                                  <td>Monday - Friday</td>
+                                  <td>6:00 AM - 8:00 PM</td>
+                              </tr>
+                              <tr>
+                                  <td>Saturday</td>
+                                  <td>7:00 AM - 9:00 PM</td>
+                              </tr>
+                              <tr>
+                                  <td>Sunday</td>
+                                  <td>7:00 AM - 6:00 PM</td>
+                              </tr>
+                          </table>
+                      </div>
+                      
+                      <!-- Social Media -->
+                      <div class="social-section">
+                          <h3>Follow Us</h3>
+                          <div class="social-links">
+                              <a href="#"><i class="fab fa-instagram"></i></a>
+                              <a href="#"><i class="fab fa-facebook-f"></i></a>
+                              <a href="#"><i class="fab fa-twitter"></i></a>
+                              <a href="#"><i class="fab fa-tiktok"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <!-- Contact Form -->
+                  <div class="contact-form">
+                      <h2>Send Us a Message</h2>
+                      <form>
+                          <div class="form-group">
+                              <label for="name">Your Name</label>
+                              <input type="text" id="name" class="form-control" required>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="email">Email Address</label>
+                              <input type="email" id="email" class="form-control" required>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="subject">Subject</label>
+                              <select id="subject" class="form-control">
+                                  <option value="general">General Inquiry</option>
+                                  <option value="wholesale">Wholesale Inquiry</option>
+                                  <option value="events">Events & Catering</option>
+                                  <option value="feedback">Feedback</option>
+                                  <option value="other">Other</option>
+                              </select>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="message">Your Message</label>
+                              <textarea id="message" class="form-control" required></textarea>
+                          </div>
+                          
+                          <button type="submit" class="submit-btn">Send Message</button>
+                      </form>
+                  </div>
+              </div>
+              
+              <!-- Map -->
+              <div class="map-container">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.693960007735!2d-122.68182692417248!3d45.5155349710725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a023ba35679%3A0xdea7938bacfe0fdb!2sPioneer%20Courthouse%20Square!5e0!3m2!1sen!2sus!4v1687897891239!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              
+              <!-- FAQ Section -->
+              <div class="faq-section">
+                  <h2 class="faq-title">Frequently Asked Questions</h2>
+                  
+                  <div class="faq-item">
+                      <div class="faq-question">
+                          <h3>Do you offer coffee tasting events or workshops?</h3>
+                          <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="faq-answer">
+                          <p>Yes! We host weekly coffee tasting events every Thursday evening and monthly brewing workshops. Check our Events page for the current schedule and to reserve your spot. Private group workshops can also be arranged by contacting our events team.</p>
+                      </div>
+                  </div>
+                  
+                  <div class="faq-item">
+                      <div class="faq-question">
+                          <h3>Can I book your space for private events?</h3>
+                          <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="faq-answer">
+                          <p>Absolutely. Our café is available for private events after hours. We can accommodate groups of 20-50 people and offer catering options with our coffee and pastries. Please email events@beanhaven.com for availability and pricing.</p>
+                      </div>
+                  </div>
+                  
+                  <div class="faq-item">
+                      <div class="faq-question">
+                          <h3>Do you sell gift cards?</h3>
+                          <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="faq-answer">
+                          <p>Yes, we offer both physical and e-gift cards that can be purchased in-store or online. They never expire and can be used for any of our products including coffee beans, drinks, and merchandise.</p>
+                      </div>
+                  </div>
+                  
+                  <div class="faq-item">
+                      <div class="faq-question">
+                          <h3>Where do you source your coffee beans from?</h3>
+                          <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="faq-answer">
+                          <p>We work directly with small farms and cooperatives in Latin America, Africa, and Asia. All our coffee is ethically sourced through direct trade relationships that pay farmers 25% above fair trade prices. Visit our "About" page to learn more about our sourcing practices.</p>
+                      </div>
+                  </div>
+                  
+                  <div class="faq-item">
+                      <div class="faq-question">
+                          <h3>Do you offer wholesale coffee for businesses?</h3>
+                          <i class="fas fa-chevron-down"></i>
+                      </div>
+                      <div class="faq-answer">
+                          <p>Yes, we provide wholesale coffee beans and training services to restaurants, offices, and other businesses. Our wholesale team can create custom blends for your establishment. Email wholesale@beanhaven.com for our wholesale menu and pricing.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+          <script>
+              // FAQ Accordion Functionality
+              document.querySelectorAll('.faq-question').forEach(question => {
+                  question.addEventListener('click', () => {
+                      const item = question.parentElement;
+                      item.classList.toggle('active');
+                      
+                      // Close other open items
+                      document.querySelectorAll('.faq-item').forEach(otherItem => {
+                          if (otherItem !== item && otherItem.classList.contains('active')) {
+                              otherItem.classList.remove('active');
+                          }
+                      });
+                  });
+              });
+              
+              // Form submission (would be more complex in real implementation)
+              const form = document.querySelector('.contact-form form');
+              form.addEventListener('submit', (e) => {
+                  e.preventDefault();
+                  alert('Thank you for your message! We will get back to you soon.');
+                  form.reset();
+              });
+          </script>
+      </body>
+      </html>
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-sm-12">
+                  <p class="copyright_text">2025 All Rights Reserved. Design by Harres Radhwane</a></p>
+               </div>
+               <div class="col-lg-6 col-sm-12">
+                  <div class="footer_social_icon">
+                     <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/LOADER.js"></script>
+
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>
